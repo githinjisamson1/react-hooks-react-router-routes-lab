@@ -2,31 +2,34 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
-  // const navItems = ["Home", "Movies", "Directors", "Actors"];
+  const navStyles = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+    };
+  };
+  
   return (
     <div className="navbar">
-      {/* <ul>
-        {navItems.map((navItem) => {
-          return (
-            <li key={navItem}>
-              <NavLink to={`/${navItem}`}>{navItem}</NavLink>
-            </li>
-          );
-        })}
-      </ul> */}
-      
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink style={navStyles} to="/">
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/movies">Movies</NavLink>
+          <NavLink style={navStyles} to="/movies">
+            Movies
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/directors">Directors</NavLink>
+          <NavLink style={navStyles} to="/directors">
+            Directors
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/actors">Actors</NavLink>
+          <NavLink style={navStyles} to="/actors">
+            Actors
+          </NavLink>
         </li>
       </ul>
     </div>
